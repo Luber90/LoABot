@@ -5,7 +5,7 @@
     <property name="idea.version" value="2020.2.3"/>
     <property name="java.vm.version" value="11.0.9+7-LTS"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.9\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Luber.000\Desktop\si\games-src"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Luber.000\Desktop\si\LoABot\games-src"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://openjdk.java.net/"/>
     <property name="path.separator" value=";"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.script" value=""/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="user.dir" value="C:\Users\Luber.000\Desktop\si\games-src"/>
+    <property name="user.dir" value="C:\Users\Luber.000\Desktop\si\LoABot\games-src"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.runtime.version" value="11.0.9+7-LTS"/>
@@ -64,10 +64,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test2a" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test1a" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test3a" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test1b" time="0"/>
   <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test3b" time="0"/>
   <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test2b" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test1a" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test1b" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test3a" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test2a" time="0"/>
 </testsuite>
