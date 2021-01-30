@@ -26,33 +26,85 @@ public class KoxPlayer extends Player {
         }
     }
 
+    private boolean contains(List<dwaInt> l, int x, int y){
+        for(int i = 0; i < l.size(); i++){
+            if(l.get(i).a == x&&l.get(i).b==y){
+                return true;
+            }
+        }
+        return false;
+    }
+
     private int distToCentr(int x1, int y1){
         return 5-(int)sqrt(pow(3.5-x1,2)+pow(3.5-y1,2));
     }
 
-    private int eval(Board b, Move move, Color color) {
+    private int eval(Board b, Color color) {
+        if(b.getWinner(color) == getColor()) return 50000;
+        else if(b.getWinner(color) == getOpponent(getColor())) return -50000;
         int eval = 0;
         int size = b.getSize();
         int ile = 0;
-        List<dwaInt> values = new ArrayList<dwaInt>();
+        List<dwaInt> visited = new ArrayList<dwaInt>();
+        List<dwaInt> tovisit = new ArrayList<dwaInt>();
+        List<dwaInt> counted = new ArrayList<dwaInt>();
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
                 if(b.getState(i,j) == getColor()){
                     ile = 0;
-                    eval += distToCentr(i, j);
-                    for (int p = -1; p < 2; p++) {
-                        for (int o = -1; o < 2; o++) {
-                            if (p != 0 && o != 0 && i + p > 0 && j + o > 0) {
-                                if (b.getState(i+p, j + o)==getColor()) {
-                                    ile++;
+                    eval += 20*distToCentr(i, j);
+                    if(!contains(visited, i, j)){
+                        tovisit.add(new dwaInt(i, j));
+                    }
+                    dwaInt tmp;
+                    while(tovisit.size()!=0) {
+                        tmp = new dwaInt(tovisit.get(0).a, tovisit.get(0).b);
+                        tovisit.remove(0);
+                        visited.add(new dwaInt(tmp.a, tmp.b));
+                        for (int p = -1; p < 2; p++) {
+                            for (int o = -1; o < 2; o++) {
+                                if ((p != 0 || o != 0) && tmp.a + p >= 0 && tmp.b + o >= 0) {
+                                    if (b.getState(tmp.a + p, tmp.b + o) == getColor()&&(!contains(visited, tmp.a + p, tmp.b + o))) {
+                                        //System.out.println("moj ziomo sie dodaje");
+                                        if(!contains(counted, tmp.a + p, tmp.b + o)){
+                                            ile++;
+                                            counted.add(new dwaInt(tmp.a + p, tmp.b + o));
+                                        }
+                                        tovisit.add(new dwaInt(tmp.a + p, tmp.b + o));
+                                    }
                                 }
                             }
                         }
                     }
-                    eval += ile;
+                    eval += (int)pow(2, ile);
                 }
                 else if(b.getState(i,j) == getOpponent(getColor())){
-                    eval -= distToCentr(i, j);
+                    eval -=20*distToCentr(i, j);
+                    ile = 0;
+                    if(!contains(visited, i, j)){
+                        tovisit.add(new dwaInt(i, j));
+                    }
+                    dwaInt tmp;
+                    while(tovisit.size()!=0) {
+                        tmp = new dwaInt(tovisit.get(0).a, tovisit.get(0).b);
+                        tovisit.remove(0);
+                        visited.add(new dwaInt(tmp.a, tmp.b));
+                        for (int p = -1; p < 2; p++) {
+                            for (int o = -1; o < 2; o++) {
+                                if ((p != 0 || o != 0) && tmp.a + p > 0 && tmp.b + o > 0) {
+                                    if (b.getState(tmp.a+p, tmp.b + o)==getOpponent(getColor())&&(!contains(visited, tmp.a + p, tmp.b + o))) {
+                                        if(!contains(counted, tmp.a + p, tmp.b + o)){
+                                            ile++;
+                                            counted.add(new dwaInt(tmp.a + p, tmp.b + o));
+                                        }
+                                        tovisit.add(new dwaInt(tmp.a + p, tmp.b + o));
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    eval -= (int)pow(2, ile);
                 }
             }
         }
@@ -68,12 +120,25 @@ public class KoxPlayer extends Player {
     @Override
     public Move nextMove(Board b) {
         List<Move> moves = b.getMovesFor(getColor());
+        List<Move> moves2;
         List<Integer> values = new ArrayList<Integer>();
+        List<Integer> values2 = new ArrayList<Integer>();
         for(Move m : moves){
             b.doMove(m);
-            int d = eval(b, m, getColor());
+            //System.out.println(m);
+            moves2 = b.getMovesFor(getOpponent(getColor()));
+            for(Move m2 : moves2){
+                b.doMove(m2);
+                //System.out.println("    "+m2);
+                int d2 = eval(b, getColor());
+                values2.add(d2);
+                //System.out.println("    "+d2);
+                b.undoMove(m2);
+            }
+            int d = eval(b, getColor())+values2.get(values2.indexOf(Collections.min(values2)));
+            values2.clear();
             values.add(d);
-            System.out.println("Move: " + m + " = " + d);
+            //System.out.println(d);
             b.undoMove(m);
         }
         /*
