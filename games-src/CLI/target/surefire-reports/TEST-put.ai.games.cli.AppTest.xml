@@ -64,8 +64,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="put.ai.games.cli.AppTest" name="tab" time="0.011"/>
-  <testcase classname="put.ai.games.cli.AppTest" name="quot" time="0.001"/>
+  <testcase classname="put.ai.games.cli.AppTest" name="tab" time="0.012"/>
+  <testcase classname="put.ai.games.cli.AppTest" name="quot" time="0"/>
   <testcase classname="put.ai.games.cli.AppTest" name="space" time="0"/>
   <testcase classname="put.ai.games.cli.AppTest" name="eol" time="0"/>
   <testcase classname="put.ai.games.cli.AppTest" name="backspace" time="0"/>

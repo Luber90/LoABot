@@ -120,9 +120,10 @@ public class KoxPlayer extends Player {
     @Override
     public Move nextMove(Board b) {
         List<Move> moves = b.getMovesFor(getColor());
-        List<Move> moves2;
+        List<Move> moves2, moves3;
         List<Integer> values = new ArrayList<Integer>();
         List<Integer> values2 = new ArrayList<Integer>();
+        List<Integer> values3 = new ArrayList<Integer>();
         for(Move m : moves){
             b.doMove(m);
             //System.out.println(m);
@@ -130,7 +131,16 @@ public class KoxPlayer extends Player {
             for(Move m2 : moves2){
                 b.doMove(m2);
                 //System.out.println("    "+m2);
-                int d2 = eval(b, getColor());
+                moves3 = b.getMovesFor(getColor());
+                for(Move m3 : moves3){
+                    b.doMove(m3);
+                    int d3 = eval(b, getColor());
+                    values3.add(d3);
+                    //System.out.println("    "+d2);
+                    b.undoMove(m3);
+                }
+                int d2 = eval(b, getColor())+values3.get(values3.indexOf(Collections.max(values3)));
+                values3.clear();
                 values2.add(d2);
                 //System.out.println("    "+d2);
                 b.undoMove(m2);

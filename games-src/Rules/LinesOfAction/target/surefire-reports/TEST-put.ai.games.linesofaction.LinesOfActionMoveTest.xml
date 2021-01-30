@@ -64,10 +64,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test2a" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test3b" time="0"/>
   <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test1a" time="0"/>
   <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test1b" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test2b" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test3b" time="0"/>
   <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test3a" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test2a" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionMoveTest" name="test2b" time="0"/>
 </testsuite>

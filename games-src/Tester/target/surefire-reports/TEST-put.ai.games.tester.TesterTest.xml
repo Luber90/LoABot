@@ -65,10 +65,10 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="put.ai.games.tester.TesterTest" name="test1" time="0.003"/>
-  <testcase classname="put.ai.games.tester.TesterTest" name="test2" time="0"/>
-  <testcase classname="put.ai.games.tester.TesterTest" name="test3" time="0"/>
-  <testcase classname="put.ai.games.tester.TesterTest" name="middleName" time="0"/>
-  <testcase classname="put.ai.games.tester.TesterTest" name="tooOld" time="0"/>
   <testcase classname="put.ai.games.tester.TesterTest" name="dash" time="0"/>
+  <testcase classname="put.ai.games.tester.TesterTest" name="test3" time="0"/>
+  <testcase classname="put.ai.games.tester.TesterTest" name="tooOld" time="0"/>
+  <testcase classname="put.ai.games.tester.TesterTest" name="middleName" time="0"/>
   <testcase classname="put.ai.games.tester.TesterTest" name="strange" time="0"/>
+  <testcase classname="put.ai.games.tester.TesterTest" name="test2" time="0"/>
 </testsuite>
