@@ -35,11 +35,12 @@ public class KoxPlayer extends Player {
         return false;
     }
 
-    private int distToCentr(int x1, int y1){
-        return 5-(int)sqrt(pow(3.5-x1,2)+pow(3.5-y1,2));
+    private int distToCentr(int x1, int y1, double cx, double cy){
+        return (int) (5.8-sqrt(pow(cx-x1,2)+pow(cy-y1,2)));
     }
 
-    private int eval(Board b, Color color) {
+    private int eval(Board b, Color color, int stareprzec) {
+        int pionki = 0, przeciwne = 0;
         if(b.getWinner(color) == getColor()) return 50000;
         else if(b.getWinner(color) == getOpponent(getColor())) return -50000;
         int eval = 0;
@@ -48,11 +49,22 @@ public class KoxPlayer extends Player {
         List<dwaInt> visited = new ArrayList<dwaInt>();
         List<dwaInt> tovisit = new ArrayList<dwaInt>();
         List<dwaInt> counted = new ArrayList<dwaInt>();
+        for(int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if(b.getState(i,j) == getColor()){
+                    pionki++;
+                }
+                else if(b.getState(i,j) == getOpponent(getColor())){
+                    przeciwne++;
+                }
+            }
+        }
+        eval -= pow(2, 4+stareprzec - przeciwne);
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
                 if(b.getState(i,j) == getColor()){
                     ile = 0;
-                    eval += 20*distToCentr(i, j);
+                    eval += pow(2, distToCentr(i, j, (size-1)/2, (size-1)/2)+4);
                     if(!contains(visited, i, j)){
                         tovisit.add(new dwaInt(i, j));
                     }
@@ -76,10 +88,10 @@ public class KoxPlayer extends Player {
                             }
                         }
                     }
-                    eval += (int)pow(2, ile);
+                    eval += (int)pow(2, (12-pionki)+ile);
                 }
                 else if(b.getState(i,j) == getOpponent(getColor())){
-                    eval -=20*distToCentr(i, j);
+                    eval -= pow(2, distToCentr(i, j, (size-1)/2, (size-1)/2)+3);
                     ile = 0;
                     if(!contains(visited, i, j)){
                         tovisit.add(new dwaInt(i, j));
@@ -104,7 +116,7 @@ public class KoxPlayer extends Player {
                         }
                     }
 
-                    eval -= (int)pow(2, ile);
+                    eval -= (int)pow(2, (12-przeciwne)+ile+1);
                 }
             }
         }
@@ -125,27 +137,53 @@ public class KoxPlayer extends Player {
         List<Integer> values2 = new ArrayList<Integer>();
         List<Integer> values3 = new ArrayList<Integer>();
         for(Move m : moves){
+            int p1 = 0;
+            int size = b.getSize();
+            for(int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    if(b.getState(i,j) == getOpponent(getColor())){
+                        p1++;
+                    }
+                }
+            }
             b.doMove(m);
             //System.out.println(m);
             moves2 = b.getMovesFor(getOpponent(getColor()));
             for(Move m2 : moves2){
+                int p2 = 0;
+                for(int i = 0; i < size; i++) {
+                    for (int j = 0; j < size; j++) {
+                        if(b.getState(i,j) == getOpponent(getColor())){
+                            p2++;
+                        }
+                    }
+                }
                 b.doMove(m2);
                 //System.out.println("    "+m2);
                 moves3 = b.getMovesFor(getColor());
                 for(Move m3 : moves3){
+                    int p3 = 0;
+                    for(int i = 0; i < size; i++) {
+                        for (int j = 0; j < size; j++) {
+                            if(b.getState(i,j) == getOpponent(getColor())){
+                                p3++;
+                            }
+                        }
+                    }
                     b.doMove(m3);
-                    int d3 = eval(b, getColor());
+                    int d3 = eval(b, getColor(), p3);
+                    //values4.clear();
                     values3.add(d3);
                     //System.out.println("    "+d2);
                     b.undoMove(m3);
                 }
-                int d2 = eval(b, getColor())+values3.get(values3.indexOf(Collections.max(values3)));
+                int d2 = eval(b, getColor(), p2)+values3.get(values3.indexOf(Collections.max(values3)));
                 values3.clear();
                 values2.add(d2);
                 //System.out.println("    "+d2);
                 b.undoMove(m2);
             }
-            int d = eval(b, getColor())+values2.get(values2.indexOf(Collections.min(values2)));
+            int d = eval(b, getColor(), p1)+values2.get(values2.indexOf(Collections.min(values2)));
             values2.clear();
             values.add(d);
             //System.out.println(d);

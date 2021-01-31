@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="15" failures="0" name="put.ai.games.linesofaction.LinesOfActionBoardTest" time="0.012" errors="0" skipped="0">
+<testsuite tests="15" failures="0" name="put.ai.games.linesofaction.LinesOfActionBoardTest" time="0.031" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="idea.version" value="2020.2.3"/>
+    <property name="idea.version" value="2020.3"/>
     <property name="java.vm.version" value="11.0.9+7-LTS"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.9\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Luber.000\Desktop\si\LoABot\games-src"/>
+    <property name="sun.boot.library.path" value="D:\Program Files\Java\jdk-11.0.9\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Luber\Desktop\bot\LoABot\games-src"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://openjdk.java.net/"/>
     <property name="path.separator" value=";"/>
@@ -15,46 +15,46 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.script" value=""/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="user.dir" value="C:\Users\Luber.000\Desktop\si\LoABot\games-src"/>
+    <property name="user.dir" value="C:\Users\Luber\Desktop\bot\LoABot\games-src"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.runtime.version" value="11.0.9+7-LTS"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\Luber.000\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="C:\Users\Luber\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="maven.ext.class.path" value="F:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven-event-listener.jar"/>
-    <property name="classworlds.conf" value="F:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3\bin\m2.conf"/>
+    <property name="maven.ext.class.path" value="D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1250"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.9\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\libnvvp;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;E:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.6.3\bin;C:\Program Files\Java\jdk-11.0.9\bin;C:\Users\Luber.000\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\Luber.000\AppData\Local\Programs\Python\Python38\;E:\Python\Scripts\;E:\Python\;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program ;E:\Users\Luber.000\AppData\Local\Programs\Microsoft VS Code\bin;."/>
-    <property name="maven.conf" value="F:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3/conf"/>
+    <property name="java.library.path" value="D:\Program Files\Java\jdk-11.0.9\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;D:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\ProgramData\chocolatey\bin;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.6.3\bin;C:\Users\Luber\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\Luber\AppData\Local\Programs\Python\Python38\;D:\Users\Luber\AppData\Local\Programs\Python\Python37\Scripts\;D:\Users\Luber\AppData\Local\Programs\Python\Python37\;C:\Users\Luber\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Users\Luber\AppData\Local\Programs\MiKTeX 2.9\miktex\bin\x64\;C:\Users\Luber\.dotnet\tools;."/>
+    <property name="maven.conf" value="D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3\plugins\maven\lib\maven3/conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="55.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.0"/>
-    <property name="user.home" value="C:\Users\Luber.000"/>
+    <property name="user.home" value="C:\Users\Luber"/>
     <property name="user.timezone" value="Europe/Belgrade"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="11"/>
-    <property name="java.class.path" value="F:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;F:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
+    <property name="java.class.path" value="D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
     <property name="user.name" value="Luber"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2020.2.3 package"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk-11.0.9"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2020.3 package"/>
+    <property name="java.home" value="D:\Program Files\Java\jdk-11.0.9"/>
     <property name="user.language" value="pl"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.version" value="11.0.9"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="F:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3"/>
+    <property name="maven.home" value="D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3\plugins\maven\lib\maven3"/>
     <property name="file.separator" value="\"/>
     <property name="java.version.date" value="2020-10-20"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
@@ -64,19 +64,19 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator4" time="0.01"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator2" time="0.031"/>
   <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator1" time="0"/>
   <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator3" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="connected3" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="connected4" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator7" time="0.001"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator5" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator4" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator8" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator7" time="0"/>
   <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator10" time="0"/>
   <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="connected1" time="0"/>
   <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator6" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator9" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="connected2" time="0.001"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="connected2" time="0"/>
   <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="connected5" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator2" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator8" time="0"/>
-  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator5" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="generator9" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="connected3" time="0"/>
+  <testcase classname="put.ai.games.linesofaction.LinesOfActionBoardTest" name="connected4" time="0"/>
 </testsuite>
